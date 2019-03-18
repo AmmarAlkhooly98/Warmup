@@ -34,5 +34,12 @@
         }
     }
 	function multiplyOfFour(array) {
-	    //your code here
+    
+	    each(array,function(element,index){
+            if(index%4===0){
+                element=element*4
+            }
+            return array
+        })
+
 	}
