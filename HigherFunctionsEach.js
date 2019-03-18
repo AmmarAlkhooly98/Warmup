@@ -5,8 +5,19 @@
           func(array[i]);
         }
     }
+   
 	function negativeAll(array) {
-	 //your code here
+        var arr=[]
+       each(array,function(element){
+        if(element<0){
+            arr.push(element*-1)
+        }
+        else{
+            arr.push(element)
+        }
+        
+       }) 
+       return arr
 	}
 
 	/*
