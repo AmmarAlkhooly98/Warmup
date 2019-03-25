@@ -7,24 +7,54 @@ function randInt(n) {
 }
 
 function makeGame(upperbound){
-  var upper=upperbound;
-  var rand=randInt(upper)
-  var counter=0;
-  return {
-  	guessMyNumber:function(n){
-  		counter++;
-	    if (n > upper) {
-	      return "Out of bounds! Please try a number between 0 and " + upperbound + ".";
-	    } else if (n === rand) {
-	      return "You guessed my number!";
-	    }
-	    return "Nope! That wasn't it!";
-  	},
-  	giveUp:function(){
-    	return rand;
-  	},
-  	numOfGuesses:function(){
-    	return counter;
-  	}
-  }
+
+	var games = {};
+
+  games.counter = 0;
+	games.upper = upperbound;
+  games.rand = randInt(games.upper);
+	games.guessMyNumber = guessMyNumber;
+	games.giveUp = giveUp;
+	games.numOfGuesses = numOfGuesses;
+
+	return games;
 }
+
+var guessMyNumber = function(n) {
+	this.counter++;
+	if (n > this.upper) {
+		return "Out of bounds! Please try a number between 0 and " + upperbound + ".";
+	} else if (n === this.rand) {
+		return "You guessed my number!";
+	}
+	return "Nope! That wasn't it!";
+}
+
+var giveUp =function() {
+	return this.rand;
+}
+
+var numOfGuesses = function() {
+	return this.counter;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
