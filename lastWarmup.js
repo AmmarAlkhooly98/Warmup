@@ -8,3 +8,20 @@ twoSum(nums,9); //should return [0,1] because nums[0] + nums[1] = 2 + 7 = 9;
 */
 
 
+var array1 = [1,2,3,4,5,6,7,8,9]
+
+function twoSum(array,number) {
+
+    var element = array[i];
+
+    for(var i=0; i<array.length; i++} {
+        if(array[i]<number) {
+        element = element + i
+        };
+        else if(array[i]===number) {
+        element = element;
+        }
+    }
+    return element;
+}
+
